@@ -2,6 +2,7 @@ package uk.co.mezpahlan.switchcompatrobolectricbug.ui.main
 
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isCompletelyDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -22,7 +23,8 @@ class MainFragmentTest {
         launchFragmentInContainer(themeResId = R.style.Theme_SwitchCompatRobolectricBug) { MainFragment.newInstance() }
 
         // Then
-        onView(withId(R.id.switch_compat))
+        onView(withId(R.id.switch_compat_2))
             .check(matches(isCompletelyDisplayed()))
+            .perform(click())
     }
 }
